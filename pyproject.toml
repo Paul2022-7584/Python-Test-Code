@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retirelab"
+version = "1.0.0"
+description = "Educational retirement scenario analysis in Python"
+requires-python = ">=3.11"
+authors = [{name = "Paul Farri"}]
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.35,<2", "pandas>=2.0,<3"]
+api = ["fastapi>=0.110,<1", "uvicorn>=0.28,<1"]
+
+[project.scripts]
+retirelab = "retirelab.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["retirelab*"]
